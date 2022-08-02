@@ -19,7 +19,10 @@ export default class CharacterRun extends Run {
     }
 
     public getLabel(): string {
-        return `${this.character.name} to ${this.mark.name}`;
+        let name = this.character.tainted ? 'Tainted ' : '';
+        name += this.character.name;
+
+        return `${name} to ${this.mark.name}`;
     }
 
 }
