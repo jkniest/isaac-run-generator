@@ -11,8 +11,8 @@
     const characterStore = useCharacterStore();
     const challengeStore = useChallengeStore();
 
-    const currentCharacter = ref(33);
-    const currentChallenge = ref(44);
+    const currentCharacter = ref(0);
+    const currentChallenge = ref(0);
 
     const nextCharacter = () => {
         currentCharacter.value++;
