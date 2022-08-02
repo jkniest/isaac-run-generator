@@ -7,7 +7,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxtjs/pwa": "^3.3.5",
+    "@kevinmarrec/nuxt-pwa": "^0.4.2",
     "@pinia/nuxt": "^0.3.1",
     "@vueuse/core": "^9.0.2",
     "@vueuse/nuxt": "^9.0.2",
