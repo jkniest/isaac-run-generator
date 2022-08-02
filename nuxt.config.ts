@@ -17,5 +17,11 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         '@kevinmarrec/nuxt-pwa'
     ],
-    ssr: false
+    ssr: false,
+    pwa: {
+        manifest: {
+            name: 'Isaac Runs',
+            lang: 'en'
+        }
+    }
 })
