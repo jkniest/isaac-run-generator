@@ -7,6 +7,9 @@
     import {useChallengeStore} from "~/stores/ChallengeStore";
     import ChallengeRun from "~/stores/data/Runs/ChallengeRun";
     import DailyRun from "~/stores/data/Runs/DailyRun";
+    import SuccessButton from "~/components/ui/SuccessButton.vue";
+    import InfoButton from "~/components/ui/InfoButton.vue";
+    import ButtonGroup from "~/components/ui/ButtonGroup.vue";
 
     const unlockedStore = useUnlockedStore();
     const characterStore = useCharacterStore();
@@ -58,17 +61,15 @@
 </script>
 
 <template>
-    <div v-if="selectedRun" class="text-center text-blue-900 pb-8">
-        <h2 class="text-2xl md:text-3xl" v-text="selectedRun.getLabel()"/>
-        <p class="text-xs mt-3">Found {{possibleRuns.length}} possible runs.</p>
+    <div v-auto-animate>
+        <div v-if="selectedRun" class="text-center text-blue-900 pb-8">
+            <h2 class="text-2xl md:text-3xl" v-text="selectedRun.getLabel()"/>
+            <p class="text-xs mt-3">Found {{ possibleRuns.length }} possible runs.</p>
+        </div>
     </div>
 
-    <div class="flex flex-col md:flex-row items-center space-y-5 md:space-y-0 md:space-x-5">
-        <button v-if="selectedRun" class="bg-green-400 hover:bg-green-500 w-full py-6 flex-1 rounded-lg" @click="complete">
-            Mark as complete
-        </button>
-        <button class="bg-blue-400 hover:bg-blue-500 py-6 flex-1 rounded-lg w-full" @click="generate">
-            Generate random run
-        </button>
-    </div>
+    <ButtonGroup>
+        <SuccessButton v-if="selectedRun" @click="complete">Mark as complete</SuccessButton>
+        <InfoButton @click="generate">Generate random run</InfoButton>
+    </ButtonGroup>
 </template>

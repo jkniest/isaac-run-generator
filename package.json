@@ -7,6 +7,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@formkit/auto-animate": "^1.0.0-beta.1",
     "@kevinmarrec/nuxt-pwa": "^0.4.2",
     "@pinia/nuxt": "^0.3.1",
     "@vueuse/core": "^9.0.2",

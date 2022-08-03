@@ -24,6 +24,10 @@ export const useUnlockedStore = defineStore('unlocked', () => {
         finishedMarks.value[characterId].push(...marks);
     }
 
+    function overrideFinishedMarks(characterId: string, marks: string[]): void {
+        finishedMarks.value[characterId] = marks;
+    }
+
     function finishChallenge(challengeId: number): void {
         finishedChallenges.value.push(challengeId);
     }
@@ -39,6 +43,7 @@ export const useUnlockedStore = defineStore('unlocked', () => {
         unlockCharacter,
         finishedMarks,
         finishMarks,
+        overrideFinishedMarks,
         finishedChallenges,
         finishChallenge
     };
